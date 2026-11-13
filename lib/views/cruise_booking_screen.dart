@@ -25,11 +25,21 @@ class CruiseBookingScreen extends StatelessWidget {
 
             return Scaffold(
               appBar: AppBar(
-                title: Text(
-                  isLandscape
-                      ? 'Sibu River Cruise & Heritage (Landscape Split View)'
-                      : 'Sibu River Cruise & Heritage',
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      isLandscape
+                          ? 'Sibu River Cruise & Heritage (Landscape Split View)'
+                          : 'Sibu River Cruise & Heritage',
+                      style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                    ),
+                    const Text(
+                      'ALEEF DANIAL BIN ABDUL RAHMAN • BCS24090018',
+                      style: TextStyle(fontSize: 10.5, color: Colors.white70),
+                    ),
+                  ],
                 ),
                 actions: [
                   if (isLandscape)
@@ -104,10 +114,10 @@ class CruiseBookingScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         // Left Pane: Hero Image
-        const Expanded(
+        Expanded(
           flex: 4,
           child: HeaderImageWidget(
-            imagePath: 'assets/images/rajang_river.jpg',
+            imagePath: viewModel.destination.imagePath,
             label: 'Rajang River Horizon',
             height: double.infinity,
           ),
