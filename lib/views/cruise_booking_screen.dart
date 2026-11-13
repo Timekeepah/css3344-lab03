@@ -104,10 +104,10 @@ class CruiseBookingScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         // Left Pane: Hero Image
-        Expanded(
+        const Expanded(
           flex: 4,
           child: HeaderImageWidget(
-            imagePath: viewModel.destination.imagePath,
+            imagePath: 'assets/images/rajang_river.jpg',
             label: 'Rajang River Horizon',
             height: double.infinity,
           ),
